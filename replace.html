@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display characters of the specified unicode numbers.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+	let str = ""
+	for(let i=0, j=0; i<100; i++, j++){
+   		if(j==26) j=0;
+   		str+=`var o${i} =  { ${String.fromCharCode(97+j)} : ${i}};</p>`
+		console.log(str);
+  	}
+	document.getElementById("demo").innerHTML = str;
+}
+</script>
+
+</body>
+</html>

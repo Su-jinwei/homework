@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+</head>
+
+<body>
+    <div class="app">
+
+        <h3>台幣匯率計算機</h3>
+        請輸入台幣：<input type="text" @keyup.enter="addPrice(price)" v-model="price">
+        <br>
+        <ul>
+            <li>美金: {{price/USA}}</li>
+            <li>港幣: {{price/HKD}}</li>
+            <li>英鎊: {{price/GBP}}</li>
+            <li>澳幣: {{price/AUD}}</li>
+            <li>日幣: {{price/JPY}}</li>
+        </ul>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            let app = new Vue({
+                el: '.app',
+                data: {
+                    USA: 27.77,
+                    HKD: 3.47,
+                    GBP: 38.04,
+                    AUD: 21.49,
+                    JPY: 0.24,
+                    price: []
+                }
+            });
+        </script>
+</body>
+
+</html>
